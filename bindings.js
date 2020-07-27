@@ -90,6 +90,12 @@ function bindings(opts) {
       // Patched to work with NIM Pools Hub Miner
       module_root = join(module_root, "src", "main", "GpuMiner");
     }
+    
+    // For production
+    if(module_root.endsWith("app.asar")){
+      module_root = module_root.replace("app.asar", "app.asar.unpacked")
+      module_root = join(module_root, "src", "main", "GpuMiner", "modules");
+    }
 
     opts.module_root = module_root;
   }
