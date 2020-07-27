@@ -88,7 +88,7 @@ function bindings(opts) {
     // module-root in that case and need to use a heuristic to hopefully find the correct directory.
     if (!fileName) {
       // Patched to work with NIM Pools Hub Miner
-      module_root = join(module_root, "src", "main", "GpuMiner");
+      module_root = join(module_root, "src", "main", "GpuMiner", "modules);
     }
     
     // For production
