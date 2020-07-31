@@ -87,13 +87,11 @@ function bindings(opts) {
     // Filename is undefined when eval() was used to execute code with bindings in it. We don't have a valid
     // module-root in that case and need to use a heuristic to hopefully find the correct directory.
     if (!fileName) {
-      // Patched to work with NIM Pools Hub Miner
-      module_root = join(module_root, "src", "main", "GpuMiner", "modules);
+      // Patched to work with NIM Pools Hub Miner while development
+      module_root = join(module_root, "src", "main", "GpuMiner", "modules");
     }
-    
-    // For production
-    if(module_root.endsWith("app.asar")){
-      module_root = module_root.replace("app.asar", "app.asar.unpacked")
+    if (module_root.endsWith("app.asar")) {
+      module_root = module_root.replace("app.asar", "app.asar.unpacked");
       module_root = join(module_root, "src", "main", "GpuMiner", "modules");
     }
 
